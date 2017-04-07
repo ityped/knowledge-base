@@ -1,0 +1,105 @@
+{
+    "beaker": "2",
+    "evaluators": [
+        {
+            "name": "HTML",
+            "plugin": "HTML",
+            "view": {
+                "cm": {
+                    "mode": "smartHTMLMode"
+                }
+            }
+        },
+        {
+            "name": "JavaScript",
+            "plugin": "JavaScript",
+            "view": {
+                "cm": {
+                    "mode": "javascript",
+                    "background": "#FFE0F0"
+                }
+            },
+            "languageVersion": "ES2015"
+        },
+        {
+            "name": "Clojure",
+            "plugin": "Clojure",
+            "imports": "com.twosigma.beaker.chart.Color\ncom.twosigma.beaker.chart.Filter\ncom.twosigma.beaker.BeakerProgressUpdate\ncom.twosigma.beaker.NamespaceClient",
+            "view": {
+                "cm": {
+                    "mode": "text/x-clojure"
+                }
+            }
+        }
+    ],
+    "cells": [
+        {
+            "id": "markdownWKjxGR",
+            "type": "markdown",
+            "body": [
+                "# Clojure Recursion via loop"
+            ],
+            "evaluatorReader": false
+        },
+        {
+            "id": "codeamdR8x",
+            "type": "code",
+            "evaluator": "Clojure",
+            "input": {
+                "body": [
+                    "(def n 4N)",
+                    "n"
+                ]
+            },
+            "output": {
+                "result": "4",
+                "selectedType": "Text",
+                "pluginName": "Clojure",
+                "shellId": "767c6220-293f-4823-ae93-e6734459faee",
+                "elapsedTime": 294,
+                "state": {},
+                "height": 56
+            },
+            "evaluatorReader": true,
+            "lineCount": 2,
+            "initialization": true,
+            "isError": false
+        },
+        {
+            "id": "codevPC2J2",
+            "type": "code",
+            "evaluator": "Clojure",
+            "input": {
+                "body": [
+                    "(defn fibonacci-series [n]",
+                    "  (loop [series [0N 1N] lastIndex n]",
+                    "    (if (<= lastIndex (count series))",
+                    "      series",
+                    "      (let [current (+ (last series) (nth series (- (count series) 2)))",
+                    "            nextSeries (conj series current)]",
+                    "        (recur nextSeries lastIndex)))))",
+                    "",
+                    "(fibonacci-series n)"
+                ]
+            },
+            "output": {
+                "state": {},
+                "result": [
+                    "0",
+                    "1",
+                    "1",
+                    "2"
+                ],
+                "selectedType": "Text",
+                "pluginName": "Clojure",
+                "shellId": "1772408c-398e-4ba6-8f0b-f908ff881b90",
+                "elapsedTime": 167,
+                "height": 56
+            },
+            "evaluatorReader": true,
+            "lineCount": 9,
+            "isError": false
+        }
+    ],
+    "namespace": {}
+}
